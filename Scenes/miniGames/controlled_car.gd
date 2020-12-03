@@ -22,4 +22,5 @@ func _physics_process(delta):
 		# Move as long as the key/button is pressed.
 		change +=(Vector2.LEFT*column_width)
 	
-	move_and_collide(change)
+	if move_and_collide(change):
+		get_tree().change_scene("res://Scenes/mainGame.tscn")
