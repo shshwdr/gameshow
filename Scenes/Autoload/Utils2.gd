@@ -5,11 +5,9 @@ var tile_length = 32
 var half_tile_size = Vector2(tile_length/2,tile_length/2)
 var rng:RandomNumberGenerator = RandomNumberGenerator.new()
 var maingame
-var moon
-var game_root
-var generator
-var camera
-var moon_jump_height = 2
+var current_question
+var failed_game = false
+var answer
 
 var interact_key = "interact"
 var interact_key_2 = "interact2"
@@ -82,11 +80,6 @@ func update_game_level():
 	height_total = height_offset_static+height_index+height_offset_static
 	
 	
-
-func reload_scene(scene):
-	var game_instance = scene.instance()
-	clear_all_children(game_root)
-	game_root.add_child(game_instance)
 
 func _ready():
 	rng.randomize()

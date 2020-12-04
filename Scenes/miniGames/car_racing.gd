@@ -3,6 +3,19 @@ extends Node2D
 onready var camera = $Camera2D
 onready var controlled_car = $controlled_car
 
+var question = {"color_count":"blue"}
+var answer = 0
+var color_list = ["green","blue","purple","grey"]
+
+var color_map = {
+	"green":Color("00ff00"),
+	"blue":Color("00f3ff"),
+	"purple":Color("9100ff"),
+	"grey":Color("5d5d5d"),
+	"pink":Color("ff6cbf"),
+	"orange":Color("ff7417"),
+}
+
 var npc_car_scene = preload("res://Scenes/Object/npc_car.tscn")
 onready var cars = $cars
 
@@ -12,7 +25,7 @@ var width = 3
 var x_center
 var y_min
 var car_width = 80
-var car_height = 80
+var car_height = 100
 
 var difficulty = 0
 
@@ -91,11 +104,18 @@ func npc_car_generation():
 				if Utils.rng.randf()>0.5:
 					car_table[[i,j]] = true
 					var npc_car_instance = npc_car_scene.instance()
+					var random_color_id = Utils.rng.randi()%color_list.size()
+					var random_color_name = color_list[random_color_id]
+					if question.has("color_count") and random_color_name == question["color_count"]:
+						answer+=1
+					npc_car_instance.modulate = color_map[random_color_name]
 					cars.add_child(npc_car_instance)
 					npc_car_instance.position = Vector2(x_center+(i-1)*car_width,y_min-j*car_height)
 #				else:
 #					print("dont add ",i," ",j)
 			
 			change_order+=1
+	print("answer ",answer)
+	Utils.answer = answer
 func generate_row():
 	pass

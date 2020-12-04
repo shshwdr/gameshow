@@ -11,6 +11,5 @@ position = Vector2( 256, 150 )
 current = true
 
 [node name="controlled_car" parent="." instance=ExtResource( 2 )]
-scale = Vector2( 0.6, 0.6 )
 
 [node name="cars" type="Node2D" parent="."]
