@@ -1,6 +1,6 @@
 extends KinematicBody2D
 
-var velocity =Vector2(0,-1)#Vector2(0,-100)
+var velocity =Vector2(0,-250)#Vector2(0,-100)
 
 var is_started = false
 var  column_width = 100

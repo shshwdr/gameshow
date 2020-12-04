@@ -1,0 +1,6 @@
+extends Node
+
+
+enum CoverState  {None, Accessible, NotAccessible, Blocked}
+
+var DIR4 = [Vector2(1,0),Vector2(0,1),Vector2(-1,0),Vector2(0,-1)]
