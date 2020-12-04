@@ -1,6 +1,6 @@
 extends KinematicBody2D
 
-var velocity = Vector2(0,-100)
+var velocity =Vector2(0,-1)#Vector2(0,-100)
 
 var is_started = false
 var  column_width = 100
@@ -23,4 +23,5 @@ func _physics_process(delta):
 		change +=(Vector2.LEFT*column_width)
 	
 	if move_and_collide(change):
+		return
 		get_tree().change_scene("res://Scenes/mainGame.tscn")
