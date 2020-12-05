@@ -21,12 +21,13 @@ _global_script_class_icons={
 [application]
 
 config/name="gameshow"
-run/main_scene="res://Scenes/miniGames/car_racing.tscn"
+run/main_scene="res://Scenes/mainGame.tscn"
 config/icon="res://icon.png"
 
 [autoload]
 
 Utils="*res://Scenes/Autoload/Utils2.gd"
+Events="*res://Scenes/Autoload/Events.gd"
 
 [display]
 

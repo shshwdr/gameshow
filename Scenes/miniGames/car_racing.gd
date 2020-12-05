@@ -19,7 +19,7 @@ var color_map = {
 var npc_car_scene = preload("res://Scenes/Object/npc_car.tscn")
 onready var cars = $cars
 
-var height = 30
+var height = 20
 var width = 3
 
 var x_center
@@ -36,17 +36,22 @@ var camera_to_car
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	camera_to_car = camera.position - controlled_car.position
-	yield(get_tree().create_timer(1), "timeout")
-	controlled_car.is_started = true
+	
 	controlled_car.column_width = car_width
 	x_center = controlled_car.position.y
 	y_min = controlled_car.position.x - car_height*3
+	
 	npc_car_generation()
+	yield(get_tree().create_timer(1), "timeout")
+	controlled_car.is_started = true
 	pass # Replace with function body.
 
 func _physics_process(delta):
 	camera.position = Vector2(camera.position.x,(controlled_car.position+camera_to_car).y)
-	#print(camera.position)
+	if controlled_car.position.y <= y_min - (height+6)*car_height:
+		#win
+		Utils.failed_game = false
+		get_tree().change_scene("res://Scenes/mainGame.tscn")
 	
 func out_border(pos,start_pos,end_pos):
 	if pos[0]>=start_pos[0] and pos[1]>=start_pos[1] and pos[0]<=end_pos[0] and pos[1]<=end_pos[1]:
