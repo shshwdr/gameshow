@@ -32,3 +32,17 @@ func select_dialog_multiple(_parent_node, chat, dialog_size = null):
 	var dialog_instance = dialog.instance()
 	dialog_instance.init_with_parent_node(_parent_node, chat,is_quest, dialog_size)
 	return dialog_instance
+	
+var label
+var dialog_instance
+func load_dialog_label(_label):
+	label = _label
+	dialog_instance.label = label
+	dialog_instance.start_dialog()
+
+func load_dialog(_dialog,parent_node):
+	dialog_instance = dialog.instance()
+	dialog_instance.dialog = _dialog
+	dialog_instance.parent_node = parent_node
+	dialog_instance.click_to_continue = true
+	parent_node.add_child(dialog_instance)

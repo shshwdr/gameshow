@@ -1,7 +1,7 @@
 extends Node
 
 var level_infos
-var current_level = 0
+var current_level = 1
 var level_folder = "res://resources/level"
 
 var level_jump_height = 20
@@ -21,7 +21,7 @@ func _ready():
 	load_levels_info()
 	
 func load_levels_info():
-	
+	return
 	var file_path = '%s/%s.json' % [level_folder, "level"]
 	level_infos = Utils.load_json(file_path)
 
@@ -39,34 +39,7 @@ func start_level():
 	#create base
 	pass
 
-func level_up_scene_change():
-	var move_up_dir = Vector2(0,-level_jump_height)
-	var moon_move_up_dir = Vector2(0,-level_jump_height+Utils.moon_jump_height)
-	var move_up_time = 1
-	
-	var space_ship_diff = LevelManager.get_level_info().target_height - LevelManager.get_last_level_info().target_height #-5
-	#move camera up and moon up
-	
-	var tween1 = Tween.new()
-	var tween2 = Tween.new()
-	var tween3 = Tween.new()
-	add_child(tween1)
-	add_child(tween2)
-	add_child(tween3)
-	
-	Utils.move_position_by( Utils.camera,tween1,move_up_dir,move_up_time,Tween.TRANS_QUINT, Tween.EASE_OUT)
-	Utils.move_position_by(Utils.moon,tween2,moon_move_up_dir,move_up_time,Tween.TRANS_BACK, Tween.EASE_OUT)
-	Utils.move_position_by(Utils.generator,tween3,move_up_dir+ Vector2(0,1)*space_ship_diff,move_up_time*3,Tween.TRANS_CUBIC, Tween.EASE_IN_OUT)
-	
-	
-	Utils.update_offset(level_jump_height)
-	Utils.moon.reset_moon()
-	yield(get_tree().create_timer(3), "timeout")
-	tween1.queue_free()
-	tween2.queue_free()
-	tween3.queue_free()
-	#move spaceship later
-	pass
+
 	
 func get_level():
 	return current_level

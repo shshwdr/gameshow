@@ -2,6 +2,7 @@ extends Node
 
 var tile_length = 32
 
+
 var half_tile_size = Vector2(tile_length/2,tile_length/2)
 var rng:RandomNumberGenerator = RandomNumberGenerator.new()
 var maingame

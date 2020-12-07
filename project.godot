@@ -28,6 +28,9 @@ config/icon="res://icon.png"
 
 Utils="*res://Scenes/Autoload/Utils2.gd"
 Events="*res://Scenes/Autoload/Events.gd"
+DebugSetting="*res://Scenes/Autoload/DebugSetting.gd"
+LevelManager="*res://Scenes/Autoload/LevelManager.gd"
+DialogManager="*res://Scenes/Autoload/DialogManager.gd"
 
 [display]
 

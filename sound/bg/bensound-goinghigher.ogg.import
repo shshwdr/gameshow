@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/bensound-goinghigher.ogg-6f5b9c686f5fc7f3aa62f74ebd9eda5d.oggstr"
+
+[deps]
+
+source_file="res://sound/bg/bensound-goinghigher.ogg"
+dest_files=[ "res://.import/bensound-goinghigher.ogg-6f5b9c686f5fc7f3aa62f74ebd9eda5d.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0

@@ -1,0 +1,71 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://Scenes/UI/Dialog.gd" type="Script" id=1]
+[ext_resource path="res://fonts/info font.tres" type="DynamicFont" id=2]
+[ext_resource path="res://sound/fx/425161__chazzravenelle__smartphone-texting-sound-and-vibrate-high-quality.ogg" type="AudioStream" id=3]
+[ext_resource path="res://art/UI/dialog_arrow.png" type="Texture" id=4]
+[ext_resource path="res://art/UI/dialog_body.png" type="Texture" id=5]
+
+[node name="Dialog" type="Control"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -300.0
+margin_top = -240.0
+margin_right = -27.0
+margin_bottom = -119.0
+mouse_filter = 1
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Timer" type="Timer" parent="."]
+
+[node name="sfx" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 3 )
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="panel" type="Node2D" parent="."]
+position = Vector2( -118.392, -68.1552 )
+
+[node name="dialog_body" type="Sprite" parent="panel"]
+position = Vector2( 255.965, 131.185 )
+scale = Vector2( 5, 5 )
+texture = ExtResource( 5 )
+
+[node name="dialog_arrow" type="Sprite" parent="panel"]
+position = Vector2( 247.492, 197.109 )
+scale = Vector2( 5, 5 )
+texture = ExtResource( 4 )
+
+[node name="RichTextLabel" type="RichTextLabel" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 11.0
+margin_top = 11.0
+margin_right = -10.0
+margin_bottom = -12.0
+mouse_filter = 1
+custom_fonts/mono_font = ExtResource( 2 )
+custom_fonts/italics_font = ExtResource( 2 )
+custom_fonts/normal_font = ExtResource( 2 )
+custom_colors/default_color = Color( 0, 0, 0, 1 )
+bbcode_enabled = true
+bbcode_text = "[tornado ] test"
+text = " test"
+scroll_active = false
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Button" type="Button" parent="."]
+modulate = Color( 1, 1, 1, 0 )
+anchor_right = 1.0
+anchor_bottom = 1.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+[connection signal="pressed" from="Button" to="." method="_on_Button_pressed"]

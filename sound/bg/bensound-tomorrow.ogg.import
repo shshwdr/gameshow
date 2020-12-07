@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/bensound-tomorrow.ogg-56b26d138240289681fc2be53c6d8e9d.oggstr"
+
+[deps]
+
+source_file="res://sound/bg/bensound-tomorrow.ogg"
+dest_files=[ "res://.import/bensound-tomorrow.ogg-56b26d138240289681fc2be53c6d8e9d.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0

@@ -1,0 +1,26 @@
+{
+    "correct":{
+        "first": {
+            "speaker":"Generator",
+            "speaker_in":"left",
+            
+            "pivot":[1,0],
+            "content": "Congratulation, you answered it correctly!",
+            "next": "12",
+            "after_trigger":"end"
+            
+        },
+    },
+    "wrong":{
+        "first": {
+            "speaker":"Generator",
+            "speaker_in":"left",
+            
+            "pivot":[1,0],
+            "content": "unfortunately, you answered it incorrectly!",
+            "next": "12",
+            "after_trigger":"end_game"
+            
+        },
+    }
+},

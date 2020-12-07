@@ -1,0 +1,23 @@
+{
+    "first": {
+        "speaker":"Generator",
+        "speaker_in":"left",
+        
+        "pivot":[1,0],
+        "content": "Try to avoid the cars, ",
+        "next": "12",
+        
+    },
+    "12": {
+        "speaker":"Generator",
+        "pivot":[1,0],
+        "content": "Then answer the first question:",
+        "next": "13"
+    },
+    "13": {
+        "speaker":"Generator",
+        "pivot":[1,0],
+        "content": "How many [color=blue]BLUE[/color] cars in this game",
+        "after_trigger":"end"
+    },
+},
